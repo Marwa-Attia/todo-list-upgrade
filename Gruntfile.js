@@ -84,6 +84,10 @@ module.exports = function (grunt) {
                 connect.static('./bower_components')
               ),
               connect().use(
+                '/node_modules',
+                connect.static('./node_modules')
+              ),
+              connect().use(
                 '/app/styles',
                 connect.static('./app/styles')
               ),
@@ -211,7 +215,7 @@ module.exports = function (grunt) {
             }
           }
       }
-    }, 
+    },
     // Compiles TypeScript to JavaScript
     typescript: {
       base: {
@@ -245,7 +249,7 @@ module.exports = function (grunt) {
         }
       }
     },
-    
+
 
     // Renames files for browser caching purposes
     filerev: {
@@ -458,7 +462,7 @@ module.exports = function (grunt) {
     grunt.task.run([
       'clean:server',
       'wiredep',
-      'tsd:refresh',
+      //'tsd:refresh',
       'concurrent:server',
       'postcss:server',
       'connect:livereload',
@@ -474,7 +478,7 @@ module.exports = function (grunt) {
   grunt.registerTask('test', [
     'clean:server',
     'wiredep',
-    'tsd:refresh',
+    //'tsd:refresh',
     'concurrent:test',
     'postcss',
     'connect:test',
@@ -484,7 +488,7 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'clean:dist',
     'wiredep',
-    'tsd:refresh',
+    //'tsd:refresh',
     'useminPrepare',
     'concurrent:dist',
     'postcss',
