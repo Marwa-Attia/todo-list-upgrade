@@ -7,6 +7,5 @@ angular.module('todoListWorkshopApp')
 
     $scope.add = function(value) {
       $scope.todos.push(value);
-      $scope.newItem = '';
     };
   });

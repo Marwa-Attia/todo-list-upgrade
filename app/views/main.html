@@ -1,5 +1,4 @@
 <div>
-  <input ng-model="newItem">
-  <button ng-click="add(newItem)">Add</button>
+  <todo-input (on-item-added)="add($event)"></todo-input>
   <todo-list [todos]="todos"></todo-list>
 </div>
