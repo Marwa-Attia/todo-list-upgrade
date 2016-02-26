@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="todoListWorkshopApp">
+  <body>
 
     <div ng-view=""></div>
 
@@ -28,6 +28,14 @@
        ga('create', 'UA-XXXXX-X');
        ga('send', 'pageview');
     </script>
+
+    <script src="/node_modules/angular2/bundles/angular2-polyfills.min.js"></script>
+    <script src="/node_modules/systemjs/dist/system.src.js"></script>
+    <script src="/node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="/node_modules/angular2/bundles/angular2.dev.js"></script>
+    <script src="/node_modules/angular2/bundles/upgrade.dev.js"></script>
+    <script src="/node_modules/angular2/bundles/http.dev.js"></script>
+    <script src="/node_modules/angular2/bundles/router.dev.js"></script>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -43,5 +51,16 @@
         <script src="scripts/controllers/about.js"></script>
         <!-- endbuild -->
 
+        <script>
+          System.config({
+            packages: {
+              scripts: {
+                format: 'cjs',
+                defaultExtension: 'js',
+              }
+            },
+          });
+          System.import('scripts/bootstrap.js').then(null, console.error.bind(console));
+        </script>
 </body>
 </html>

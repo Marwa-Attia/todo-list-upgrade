@@ -1,12 +1,10 @@
-/// <reference path="../../typings/angularjs/angular.d.ts" />
-/// <reference path="../../typings/angularjs/angular-route.d.ts" />
 
 'use strict';
-
+declare var angular: any;
 angular.module('todoListWorkshopApp', [
     'ngRoute'
   ])
-  .config(($routeProvider:ng.route.IRouteProvider) => {
+  .config(($routeProvider) => {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',

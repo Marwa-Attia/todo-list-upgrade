@@ -38,7 +38,7 @@ module.exports = function (grunt) {
         tasks: ['wiredep']
       },
       typescript: {
-        files: ['<%= yeoman.app %>/scripts/{,*/}*.ts'],
+        files: ['<%= yeoman.app %>/scripts/{,*/}*.ts', '<%= yeoman.app %>/scripts/**/*.ts'],
         tasks: ['typescript:base']
       },
       typescriptTest: {
@@ -220,13 +220,14 @@ module.exports = function (grunt) {
     typescript: {
       base: {
         src: ['<%= yeoman.app %>/scripts/{,*/}*.ts'],
-          dest: '.tmp/scripts',
-          options: {
-          module: 'amd', //or commonjs
-            target: 'es5', //or es3
-            'base_path': '<%= yeoman.app %>/scripts', //quoting base_path to get around jshint warning.
-            sourcemap: true,
-            declaration: true
+        dest: '.tmp/scripts',
+        options: {
+          module: 'commonjs', //or commonjs
+          target: 'es5', //or es3
+          'base_path': '<%= yeoman.app %>/scripts', //quoting base_path to get around jshint warning.
+          sourcemap: true,
+          declaration: true,
+          experimentalDecorators: true
         }
       },
       test: {
