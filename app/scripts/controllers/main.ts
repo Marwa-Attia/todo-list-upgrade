@@ -2,22 +2,12 @@
 
 'use strict';
 
-module todoListWorkshopApp {
-  export interface IMainScope extends ng.IScope {
-    awesomeThings: any[];
-  }
-
-  export class MainCtrl {
-
-    constructor (private $scope: IMainScope) {
-      $scope.awesomeThings = [
-        'HTML5 Boilerplate',
-        'AngularJS',
-        'Karma'
-      ];
-    }
-  }
-}
-
 angular.module('todoListWorkshopApp')
-  .controller('MainCtrl', todoListWorkshopApp.MainCtrl);
+  .controller('MainCtrl', function($scope) {
+    $scope.todos = ['item1', 'item2', 'item3'];
+
+    $scope.add = function(value) {
+      $scope.todos.push(value);
+      $scope.newItem = '';
+    };
+  });
