@@ -7,8 +7,9 @@ import { Component, Output, EventEmitter } from 'angular2/core';
 })
 export class TodoInput {
   @Output() onItemAdded = new EventEmitter();
-
+  currentItem;
   add(value) {
     this.onItemAdded.emit(value);
+    this.currentItem = '';
   }
 }

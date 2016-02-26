@@ -23,6 +23,7 @@
     "files": [
         "app.ts",
         "bootstrap.ts",
+        "components/todo-app.ts",
         "components/todo-input.ts",
         "components/todo-list.ts",
         "controllers/main.ts"

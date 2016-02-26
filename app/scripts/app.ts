@@ -7,8 +7,7 @@ angular.module('todoListWorkshopApp', [
   .config(($routeProvider) => {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        template: `<todo-app></todo-app>`
       })
       .otherwise({
         redirectTo: '/'
