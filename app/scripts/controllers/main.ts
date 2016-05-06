@@ -1,10 +1,9 @@
-/// <reference path="../app.ts" />
 
 'use strict';
 
 angular.module('todoListWorkshopApp')
-  .controller('MainCtrl', function($scope) {
-    $scope.todos = ['item1', 'item2', 'item3'];
+  .controller('MainCtrl', function($scope, todosService) {
+    $scope.todos = todosService.getTodos();
 
     $scope.add = function(value) {
       $scope.todos.push(value);
